@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="validation.js"></script>
+
+  <style>
+    .error{
+    color: red;
+    font-size: 10px;
+}
+    form {
+      width: 80%;
+      margin: 30px;
+    }
+
+    @media (min-width: 768px) {
+      .modal-xl {
+        width: 90%;
+        max-width: 1200px;
+      }
+
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="modal fade" id="modelWindow" role="dialog">
+    <div class="modal-dialog modal-sm vertical-align-center modal-dialog modal-xl">
+      <div class="modal-content" id="modalcontent">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">View Details </h4>
+        </div>
+        <div class="modal-body" id="modalB">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" data-dismiss="modal" class="btn btn-default" id="btnClose">Close</button>
+          <button type="button" class="btn btn-default" id="btnSave">Save</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <form class="form">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input class="form-control" id="firstName" name="firstName" required placeholder="First Name" minlength="3"
+              maxlength="15" onblur="validateInput(this)" />
+            <div class="error"></div>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input class="form-control" id="lastName" name="lastName" required placeholder="Last Name" minlength="3"
+              maxlength="15" onblur="validateInput(this)" />
+            <div class="error"></div>
+          </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <input class="form-control" id="city" name="city" required placeholder="City"
+              onblur="validateInput(this)" />
+            <div class="error"></div>
+          </div>
+          <div class="form-group">
+            <label for="job">Job</label>
+            <input class="form-control" id="job" name="job" required placeholder="Job" onblur="validateInput(this)" />
+            <div class="error"></div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input class="form-control" id="email" name="email" required placeholder="Email" minlength="5"
+              maxlength="25" onblur="validateInput(this)" />
+            <div class="error"></div>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" reqiured name="password" placeholder="Password"
+              minlength="5" maxlength="20" onblur="validateInput(this)" />
+            <div class="error"></div>
+          </div>
+
+          <button id="submitBtn" class="btn btn-success" type="submit">Send</button>
+        </form>
+      </div>
+
+
+      <div class="col-md-6">
+        <p style="text-align: center; margin-top: 20px; font-size: 18px;">Users</p>
+        <table class="table">
+          <thead>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>City</th>
+            <th>Job</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Delete</th>
+          </thead>
+          <tbody id="tBody">
+
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
